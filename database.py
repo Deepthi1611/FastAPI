@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 # url of the database created
 # postgresql://<username>:<password>@<host>:<port>/<database_name>
-URL_DATABASE = 'postgresql://postgres:Deepthi@134@localhost:5432/QuizApplication'
+URL_DATABASE = 'postgresql://postgres:Deepthi%40134@localhost:5432/QuizApplication'
 
 # The engine is the starting point for any SQLAlchemy application. It is responsible for:
 
