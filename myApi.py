@@ -4,6 +4,8 @@ from fastapi import FastAPI, Path
 from typing import Optional
 from pydantic import BaseModel
 # Pydantic is used for data validation and serialization. The BaseModel from the pydantic library plays a crucial role in this process. It allows you to define and validate data models that represent the structure of request and response data.
+import uvicorn
+
 
 # an instance of the FastAPI class is created. This app object will be used to define the routes (endpoints) and manage the application.
 app = FastAPI()
@@ -62,6 +64,7 @@ class UpdateStudent(BaseModel):
     year: Optional[str] = None
 
 # post method
+# post, get etc are called operation and the function written below decorator is called path operation function, decorator is called path operation decorator 
 @app.post("/student")
 def createStudent(student: Student):
     students[2] = student
@@ -88,3 +91,8 @@ def deleteStudent(student_id: int):
     else:
         del students[student_id]
         return {"message":"student deleted successfully"}
+    
+
+# defining custom port instead of using default port which is 8000
+# if __name__ == "__myApi__":
+#     uvicorn.run(app, host='127.0.0.1', port=9000)
