@@ -3,7 +3,7 @@ from .. import schemas, database
 from ..controllers import authentication
 
 router = APIRouter(
-    tags=['Login'],
+    tags=['Authentication'],
     prefix='/login'
 )
 
