@@ -4,6 +4,7 @@ from . import token
 from fastapi.security import OAuth2PasswordBearer
 from typing import Annotated
 
+# here login is the route path
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 async def get_current_user(data: Annotated[str, Depends(oauth2_scheme)]):
