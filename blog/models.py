@@ -8,6 +8,7 @@ class Blog(Base):
     id = Column(Integer, primary_key=True, index = True)
     title = Column(String)
     body = Column(String)
+    test = Column(String, nullable=True) # test column
     user_id = Column(Integer, ForeignKey('users.id'))
     creator = relationship('User', back_populates='blogs')
 
